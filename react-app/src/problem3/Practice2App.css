@@ -1,0 +1,35 @@
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  flex-direction: column;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  max-height: 400px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.image {
+  display: flex;
+  width: 250px;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  object-fit: cover;
+}
+.image img {
+  object-fit: cover;
+  width: 90%;
+  height: 90%;
+  box-shadow: rgba(0, 0, 0, 0.263) 1.95px 1.95px 2.6px;
+}
+
+.title {
+  color: grey;
+  font-size: 17px;
+}
