@@ -8,9 +8,9 @@ const Practice3 = () => {
   const [pw, setPw] = useState(""); // 12345
   const checkLogin = () => {
     if (id === "gan" && pw === "12345") {
-      alert("성공");
+      alert("로그인 성공");
     } else {
-      alert("실패");
+      alert("로그인 실패");
     }
   };
   return (

@@ -1,0 +1,46 @@
+@mixin rainbow($size: 50px, $color: red) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+
+.box {
+  display: flex;
+
+  .squire {
+    // width: 50px;
+    // height: 50px;
+    // background-color: red;
+    // border: 1px solid black;
+    flex-shrink: 0; 
+    // 를 사용하면 부모크기랑 상관없이 자기 사이즈 유지! 
+
+    &:nth-child(1) {
+      @include rainbow();
+    }
+
+    &:nth-child(2) {
+      @include rainbow($size: 100px, $color: orange);
+    }
+
+    &:nth-child(3) {
+      @include rainbow($size: 150px, $color: yellow);
+    }
+
+    &:nth-child(4) {
+      @include rainbow($size: 200px, $color: green);
+    }
+
+    &:nth-child(5) {
+      @include rainbow($size: 250px, $color: blue);
+    }
+
+    &:nth-child(6) {
+      @include rainbow($size: 300px, $color: darkblue);
+    }
+
+    &:nth-child(7) {
+      @include rainbow($size: 350px, $color: purple);
+    }
+  }
+}

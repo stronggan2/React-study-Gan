@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
-import "./DiaryEditor.css";
 
-const DiaryEditor = (onCreate) => {
+const DiaryEditor = ({ onCreate }) => {
   const authorInput = useRef();
   const contentInput = useRef();
 
-  const [state, setState] = useState({ author: "", content: "", emotion: 1 });
+  const [state, setState] = useState({
+    author: "",
+    content: "",
+    emotion: 1,
+  });
 
-  const handleChangestate = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
-
+  const handleChangeState = (e) => {
     setState({
       ...state,
       [e.target.name]: e.target.value,
@@ -23,42 +23,49 @@ const DiaryEditor = (onCreate) => {
       return;
     }
 
-    if (state.content < 5) {
+    if (state.content.length < 5) {
       contentInput.current.focus();
       return;
     }
-    onCreate(state.author, state.emotion, state.emotion);
+
+    onCreate(state.author, state.content, state.emotion);
     alert("저장 성공");
     setState({
-      author:"", contect:"", emotion:1
-    })
+      author: "",
+      content: "",
+      emotion: 1,
+    });
   };
+
   return (
     <div className="DiaryEditor">
       <h2>오늘의 일기</h2>
       <div>
         <input
           ref={authorInput}
-          name="author"
-          type="text"
           value={state.author}
-          onChange={handleChangestate}
+          onChange={handleChangeState}
+          name="author"
+          placeholder="작성자"
+          type="text"
         />
-        {/* <input onChange={handleChangestate} /> */}
       </div>
       <div>
         <textarea
           ref={contentInput}
-          name="content"
           value={state.content}
-          onChange={handleChangestate}
+          onChange={handleChangeState}
+          name="content"
+          placeholder="일기"
+          type="text"
         />
       </div>
       <div>
+        <span>오늘의 감정점수 : </span>
         <select
           name="emotion"
           value={state.emotion}
-          onChange={handleChangestate}
+          onChange={handleChangeState}
         >
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -73,5 +80,4 @@ const DiaryEditor = (onCreate) => {
     </div>
   );
 };
-
 export default DiaryEditor;
