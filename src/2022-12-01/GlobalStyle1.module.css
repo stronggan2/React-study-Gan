@@ -1,0 +1,10 @@
+.container {
+  background: black;
+  padding: 1rem;
+  font-size: 2rem;
+  color: white;
+  }
+  :global .globalBtn {
+  background-color: yellow;
+  }
+  

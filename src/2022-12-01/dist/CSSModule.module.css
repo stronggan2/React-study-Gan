@@ -1,0 +1,14 @@
+.container {
+  background: black;
+  padding: 1rem;
+  font-size: 2rem;
+  color: white;
+}
+.container.title {
+  border: 5px solid greenyellow;
+}
+
+:global .span {
+  color: yellow;
+  font-weight: bold;
+}
