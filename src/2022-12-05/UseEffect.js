@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const AddName = () => {
+const UseEffect = () => {
   const [names, setNames] = useState(() => heavyWork());
   const [input, setInput] = useState("");
 
@@ -14,9 +14,18 @@ const AddName = () => {
   function heavyWork() {
     for (let i = 0; i < 1000; i++) {
       console.log("엄청 복잡한 계산 중.. 시간 오래 걸림..");
-      return ["간", "리액트"];
     }
+    return ["간", "리액트"];
   }
+  useEffect(() => {
+    console.log("렌더링이 완료되었습니다.");
+    console.log({ names });
+
+    return () => {
+      console.log("cleanup");
+      console.log({ names });
+    };
+  }, [names]);
 
   return (
     <div>
@@ -31,4 +40,4 @@ const AddName = () => {
   );
 };
 
-export default AddName;
+export default UseEffect;

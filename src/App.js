@@ -1,10 +1,10 @@
-import React from 'react';
-import AddName from './2022-12-05/AddName';
+import React from "react";
+import UseRefDom from "./2022-12-05/UseRefDom";
 
 const App = () => {
   return (
     <div>
-      <AddName/>
+      <UseRefDom/>
     </div>
   );
 };
