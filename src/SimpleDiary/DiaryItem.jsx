@@ -7,12 +7,14 @@ const DiaryItem = ({
   author,
   content,
   emotion,
-  created_date
+  created_date,
 }) => {
   const localContentInput = useRef();
+
   const [localContent, setLocalContent] = useState(content);
-  const [isEdit, setIsEdit] = useState(false);
-  const toggleIsEdit = () => setIsEdit(!isEdit);
+
+  const [isEdit, setIsEdit] = useState(false); // 수정중인지 아닌지
+  const toggleIsEdit = () => setIsEdit(!isEdit); // 수정하기 버튼을 누르면 작동
 
   const handleClickRemove = () => {
     if (window.confirm(`${id}번째 일기를 정말 삭제하시겠습니까?`)) {
@@ -31,9 +33,10 @@ const DiaryItem = ({
       return;
     }
 
+    // 수정 확인
     if (window.confirm(`${id}번 째 일기를 수정하시겠습니까?`)) {
       onEdit(id, localContent);
-      toggleIsEdit();
+      toggleIsEdit(); // 수정 폼 닫기
     }
   };
 
