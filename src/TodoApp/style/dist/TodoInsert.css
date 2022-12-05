@@ -11,4 +11,8 @@ input {
   font-size: 15px;
   line-height: 25px;
   color: black;
+  flex: 1;
+}
+input::placeholder {
+  color: gray;
 }

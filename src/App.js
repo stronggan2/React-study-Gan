@@ -1,13 +1,10 @@
-import React from "react";
-import TodoTemplate from "./TodoApp/components/TodoTemplate";
-import TodoInsert from "./TodoApp/components/TodoInsert";
+import React from 'react';
+import AddName from './2022-12-05/AddName';
 
 const App = () => {
   return (
     <div>
-      <TodoTemplate>
-        <TodoInsert />
-      </TodoTemplate>
+      <AddName/>
     </div>
   );
 };
