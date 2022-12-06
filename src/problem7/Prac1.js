@@ -16,7 +16,7 @@ const Prac1 = () => {
       <input type="text" onChange={InputChange} />
       <button onClick={uploadInput}>추가</button>
 
-      {/* ul -> li로 사용해야 함 안에 넣을 경우 여러개가 생기니까 밖으로 감싸기 */}
+      {/* ul -> li로 사용해야 함. 안에 넣을 경우 여러개가 생기니까 밖으로 감싸기 */}
       <ul>
         {foods.map((food, idx) => (
           <li key={idx}>{food}</li>
