@@ -5,11 +5,11 @@ const Counter = () => {
   const [state, dispatch] = useReducer(countReducer, 0);
 
   function numUp() {
-    dispatch({ type: "INCREMENT" });
+    dispatch({ type: "INCREMENT", icon: "🌷" });
   }
 
   function numDown() {
-    dispatch({ type: "DECREMENT" });
+    dispatch({ type: "DECREMENT", icon: "🌼" });
   }
 
   return (
