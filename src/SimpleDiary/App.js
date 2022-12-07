@@ -4,7 +4,7 @@ import React, {
   useMemo,
   useReducer,
   useRef,
-  createContext,
+  createContext
 } from "react";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
@@ -23,7 +23,7 @@ const reducer = (state, action) => {
 
       const newItem = {
         ...action.data,
-        created_date,
+        created_date
       };
       return [newItem, ...state];
     }
@@ -35,7 +35,7 @@ const reducer = (state, action) => {
         it.id === action.targetId
           ? {
               ...it,
-              content: action.newContent,
+              content: action.newContent
             }
           : it
       );
@@ -60,7 +60,7 @@ const App = () => {
           content: it.body,
           emotion: Math.floor(Math.random() * 5) + 1,
           created_date: new Date().getTime(),
-          id: dataId.current++,
+          id: dataId.current++
         };
       });
 
@@ -75,7 +75,7 @@ const App = () => {
   const onCreate = useCallback((author, content, emotion) => {
     dispatch({
       type: "CREATE",
-      data: { author, content, emotion, id: dataId.current },
+      data: { author, content, emotion, id: dataId.current }
     });
     dataId.current += 1;
   }, []);
@@ -88,7 +88,7 @@ const App = () => {
     dispatch({
       type: "EDIT",
       targetId,
-      newContent,
+      newContent
     });
   }, []);
 
@@ -102,7 +102,7 @@ const App = () => {
   const { goodCount, badCount, goodRatio } = memoizedDiaryAnalysis;
 
   const store = {
-    data,
+    data
   };
 
   const memoizedDispatch = useMemo(() => {
