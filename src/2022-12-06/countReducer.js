@@ -1,4 +1,4 @@
-const countReducer = (state, action) => {
+function countReducer(state, action) {
   switch (action.type) {
     case "INCREMENT":
       return action.icon;
@@ -7,6 +7,5 @@ const countReducer = (state, action) => {
     default:
       return state;
   }
-};
-
+}
 export default countReducer;

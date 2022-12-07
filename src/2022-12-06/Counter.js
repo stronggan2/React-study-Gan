@@ -1,15 +1,14 @@
-import React, { useReducer } from "react";
+import React from "react";
 import countReducer from "./countReducer";
 
 const Counter = () => {
   const [state, dispatch] = useReducer(countReducer, 0);
 
   function numUp() {
-    dispatch({ type: "INCREMENT", icon: "🌷" });
+    dispatch({ type: "INCREMENT", icon : "🌷"  });
   }
-
   function numDown() {
-    dispatch({ type: "DECREMENT", icon: "🌼" });
+    dispatch({ type: "DECREMENT", icon : "🌼"  });
   }
 
   return (
