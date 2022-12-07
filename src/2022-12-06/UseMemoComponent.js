@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 
 function hardCalculate(number) {
   console.log("어려운 계산중");
@@ -6,9 +6,18 @@ function hardCalculate(number) {
   return number + 10000;
 }
 
+function easyCalculate(number) {
+  console.log("쉬운 계산중");
+  return number + 1;
+}
+
 const useMemoComponent = () => {
   const [hardNumber, setHardNumber] = useState(1);
-  const hardSum = hardCalculate(hardNumber);
+  const [easyNumber, setEasyNumber] = useState(1);
+
+  const hardSum = useMemo(() => hardCalculate(hardNumber), [hardNumber]);
+
+  const easySum = easyCalculate(easyNumber);
 
   return (
     <div>
@@ -19,6 +28,14 @@ const useMemoComponent = () => {
         onChange={(e) => setHardNumber(parseInt(e.target.value))}
       />
       <span> + 10000 = {hardSum} </span>
+
+      <h3>쉬운 계산기</h3>
+      <input
+        type="number"
+        value={easyNumber}
+        onChange={(e) => setEasyNumber(parseInt(e.target.value))}
+      />
+      <span> + 1 = {easySum} </span>
     </div>
   );
 };
