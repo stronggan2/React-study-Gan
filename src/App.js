@@ -1,12 +1,19 @@
-import React from 'react';
-import Prac3 from './실습/problem8/Prac3';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./2022-12-08/Home";
+import NotFound from "./2022-12-08/NotFound";
+import Product from "./2022-12-08/Product";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <NotFound />,
+  }
+]);
 
 const App = () => {
-  return (
-    <div>
-      <Prac3/>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

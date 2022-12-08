@@ -25,10 +25,7 @@ const Prac3 = () => {
             // )
             // 동일한 객체끼리의 비교가 안되는 이유, 삭제가 안되는 이유는???
             ...state.member.filter(
-              (person) =>
-                person.name !== action.payload.name &&
-                person.age !== action.payload.age &&
-                person.address !== action.payload.address
+              (person) => person.name !== action.payload.name
             ),
           ],
         };
