@@ -1,10 +1,12 @@
 import React from "react";
-import Fetch from "./2022-12-12/Fetch";
+import FruitInput from "./2022-12-12/FruitInput";
 
 const App = () => {
+  
+
   return (
     <div>
-      <Fetch/>
+      <FruitInput />
     </div>
   );
 };
