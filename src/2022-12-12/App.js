@@ -72,7 +72,7 @@ const App = () => {
 
   // 데이터 삭제하기
   async function deleteFruit() {
-    await deleteDoc(doc(fruitCollection, "바나나"));
+    await deleteDoc(doc(fruitCollection, "딸기"));
   }
 
   // 데이터 필드 삭제하기2

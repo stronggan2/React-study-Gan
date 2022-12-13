@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { db } from "../Firebase";
+import { db } from "./Firebase";
 import { setDoc, doc, collection } from "firebase/firestore";
 
-const FruitInput = () => {
+const App = () => {
   const fruitCollection = collection(db, "fruits");
   const [fruit, setFruit] = useState({
     name: "",
@@ -24,8 +24,8 @@ const FruitInput = () => {
   const changeHandler = (e) => {
     setFruit({ ...fruit, [e.target.name]: e.target.value });
   };
-
   console.log(fruit);
+
 
   return (
     <div>
@@ -57,4 +57,4 @@ const FruitInput = () => {
   );
 };
 
-export default FruitInput;
+export default App;
