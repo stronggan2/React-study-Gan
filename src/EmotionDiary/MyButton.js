@@ -1,13 +1,19 @@
 import React from "react";
+import "../App.css";
 
 const MyButton = ({ text, type, onClick }) => {
+  const btnType = ["positive", "negative"].includes(type) ? type : "default";
+
   return (
-    <div>
-      <button className="MyButton" onClick={onClick}>
-        {text}
-      </button>
-    </div>
+    <button
+      className={["MyButton", `MyButton_${btnType}`].join(" ")}
+      onClick={onClick}
+    >
+      {text}
+    </button>
   );
+
+  MyButton.defaultProps = { type: "default" };
 };
 
 export default MyButton;
