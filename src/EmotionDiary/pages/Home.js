@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from "react";
+import MyHeader from "../MyHeader";
+import MyButton from "../MyButton";
 
 const Home = () => {
+  const [curDate, setCurDate] = useState(new Date());
+  const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
   return (
     <div>
-      <h1>Home</h1>
-      <p>이곳은 홈 입니다.</p>
+      <MyHeader
+        headText={headText}
+        leftChild={<MyButton text={"<"} onClick={() => {}} />}
+        rightChild={<MyButton text={">"} onClick={() => {}} />}
+      />
     </div>
   );
 };
