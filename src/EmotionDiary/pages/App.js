@@ -35,9 +35,18 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-const App = () => {
-  const [data, dispatch] = useReducer(reducer, []);
+const dummyData = [
+  { id: 1, emotion: 1, content: "오늘의 일기 1번", date: 1671006278549 },
+  { id: 2, emotion: 2, content: "오늘의 일기 2번", date: 1671006278550 },
+  { id: 3, emotion: 3, content: "오늘의 일기 3번", date: 1671006278551 },
+  { id: 4, emotion: 4, content: "오늘의 일기 4번", date: 1671006278552 },
+  { id: 5, emotion: 5, content: "오늘의 일기 5번", date: 1671006278553 },
+];
 
+const App = () => {
+  const [data, dispatch] = useReducer(reducer, dummyData);
+
+  console.log(new Date().getTime());
   const dataId = useRef(0);
   //CREATE
   const onCreate = (date, content, emotion) => {
@@ -72,7 +81,7 @@ const App = () => {
   };
   return (
     <DiaryStateContext.Provider value={data}>
-      <DiaryDispatchContext.Provider value={{onCreate, onEdit, onRemove}}>
+      <DiaryDispatchContext.Provider value={{ onCreate, onEdit, onRemove }}>
         <BrowserRouter>
           <div className="App">
             {/* <img src={process.env.PUBLIC_URL + `/assats/emotion1.png`} />
