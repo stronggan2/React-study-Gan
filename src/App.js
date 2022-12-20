@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Data } from "./coding_apple/Data";
 import PieChart from "./coding_apple/PieChart";
+import "./coding_apple/Chart.css"
 
 export default function App() {
   const [chartData, setChartData] = useState({
@@ -22,10 +23,16 @@ export default function App() {
     ],
   });
 
+  const style = { width: "300px", border: "1px solid red" };
   return (
     <div className="App">
       <p>Using Chart.js in React</p>
-      <PieChart chartData={chartData} />
+      <div style={style}>
+        <PieChart chartData={chartData} />
+      </div>
+      <div style={style}>
+        <PieChart chartData={chartData} />
+      </div>
     </div>
   );
 }
