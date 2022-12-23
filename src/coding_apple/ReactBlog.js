@@ -1,28 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
+import "./ReactBlog.css"
 
 const ReactBlog = () => {
-  let [글제목, 글제목변경] = useState[("리액트쪼랩", "공덕맛집", "공덕술집")];
-  let [따봉, 따봉변경] = useState(0);
-  let [modal, setModal] = useState(false);
+  let posts = "강남 우동 맛집";
+  let [a,setA] = useState(["공덕 맛집", "크리스 마스 선물", "연말에 뭐하지?"]);
+
+
 
   return (
-    <div className="ReactBlog">
-      <div className="pinkNav">
-        <h4>React Blog</h4>
+    <div className="App">
+      <div className="black-nav">
+        <div>React Blog</div>
       </div>
-
-      <div>
-        <h4>
-          {글제목[0]}
-          <span
-            onClick={() => {
-              따봉변경(따봉 + 1);
-            }}
-          >
-            👍🏻
-          </span>
-        </h4>
-        <p>12월 16일 발행</p>
+      <div className="list">
+        <h4>{a[0]}</h4>
+        <p>12월 17일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{a[1]}</h4>
+        <p>12월 20일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{a[2]}</h4>
+        <p>12월 23일 발행</p>
       </div>
     </div>
   );
