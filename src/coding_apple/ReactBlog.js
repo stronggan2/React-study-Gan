@@ -2,10 +2,13 @@ import React from "react";
 import { useState } from "react";
 import "./ReactBlog.css";
 
+//map : 많은 div들을 반복문으로 줄이고 싶은 충동이 들 때
+
 const ReactBlog = () => {
   let posts = "강남 우동 맛집";
   let [a, setA] = useState(["공덕 맛집", "크리스 마스 선물", "연말에 뭐하지?"]);
   let [b, setB] = useState(0);
+  let [modal, setModal] = useState(false);
 
   return (
     <div className="App">
@@ -52,10 +55,17 @@ const ReactBlog = () => {
         <p>12월 20일 발행</p>
       </div>
       <div className="list">
-        <h4>{a[2]}</h4>
+        <h4
+          onClick={() => {
+            setModal = true;
+          }}
+        >
+          {a[2]}
+        </h4>
+        {modal == true ? <Modal /> : null}
+
         <p>12월 23일 발행</p>
       </div>
-      <Modal />
     </div>
   );
 };
