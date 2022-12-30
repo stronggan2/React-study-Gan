@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import "./ReactBlog.css";
-//Component : 많은 div들을 한 단어로 줄이고 싶으면
 
 const ReactBlog = () => {
   let posts = "강남 우동 맛집";
@@ -56,8 +55,19 @@ const ReactBlog = () => {
         <h4>{a[2]}</h4>
         <p>12월 23일 발행</p>
       </div>
+      <Modal />
     </div>
   );
 };
+
+function Modal() {
+  return (
+    <div className="Modal">
+      <h4>제목</h4>
+      <h4>날씨</h4>
+      <h4>상세내용</h4>
+    </div>
+  );
+}
 
 export default ReactBlog;
