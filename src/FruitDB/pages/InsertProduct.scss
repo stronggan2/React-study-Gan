@@ -1,0 +1,33 @@
+.container {
+  height: 500px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  background-color: seashell;
+
+  h1 {
+    margin: 2rem;
+    text-align: center;
+  }
+
+  .setForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 500px;
+  }
+
+  input {
+    width: 250px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    outline: none;
+  }
+
+  .addBtn {
+    width: 200px;
+    padding: 1rem;
+    background-color: pink;
+    border: none;
+    border-radius: 15px;
+  }
+}

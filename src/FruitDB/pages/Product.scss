@@ -1,0 +1,26 @@
+.productTable {
+  width: 70%;
+  min-width: 500px;
+  margin: 5rem auto;
+  table-layout: fixed;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+
+  .productTopTr {
+    border-bottom: 3px solid #707070;
+  }
+
+  .productTr {
+    text-align: center;
+    height: 2.5rem;
+    background-color: #ffcccb;
+  }
+}
+
+.infoBtn {
+  border: none;
+  background-color: #eeeeee;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
