@@ -66,8 +66,8 @@ const ReactBlog = () => {
         */}
       {a.map(function (c, i) {
         return (
-          <div className="list" key={i}>
-            <h4>
+          <div className="list" key={i}> 
+            <h4 onClick={() => {setModal(true)}}>{a[i]}
               {c}{" "}
               <span
                 onClick={() => {
@@ -92,7 +92,7 @@ function Modal() {
   return (
     <div className="Modal">
       <h4>제목</h4>
-      <h4>날씨</h4>
+      <h4>날짜</h4>
       <h4>상세내용</h4>
     </div>
   );
